@@ -17,15 +17,12 @@ class HomeScreen extends React.Component {
       <Image
               style={{width: 450, height: 300}}
               source={require('./assets/city1.gif')} />
-<<<<<<< HEAD
       <Image
               style={{width: 450, height: 75}}
               source={require('./assets/logo.png')} />
-=======
 
       <Text style={styles.teks}>Smart ACE Soil</Text>
       <Text style={styles.teks}>(Adjusment, Controlling, Evaluation)</Text>
->>>>>>> 61f8ac636d2d9c417020eb48208c7eba014490af
         
         <ActionButton buttonColor="#84d9f3">
           
