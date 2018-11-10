@@ -14,35 +14,40 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
       <Image
-              style={{width: 300, height: 150}}
-              source={require('./assets/logo2.gif')} />
-        <Text style={styles.teks}>Smart ACE (Adjusment, Controlling, Evaluation) Soil</Text>
-        <ActionButton buttonColor="#fae45a">
+              style={{width: 450, height: 350}}
+              source={require('./assets/city1.gif')} />
+      <Text style={styles.teks}>Smart ACE Soil</Text>
+      <Text style={styles.teks}>(Adjusment, Controlling, Evaluation)</Text>
+        
+        <ActionButton buttonColor="#fae45a" onPress={() => style={backgroundImage:'./assets/splash.png'}}>
+          
 
           <ActionButton buttonColor='#90dc9e' title="New Task" onPress={() => Alert.alert('pH Tanah Aman Terkendali!')}>
             <Image
-              style={{width: 50, height: 90}}
+              style={{width: 60, height: 90}}
               source={require('./assets/ph-meter2.png')} />
           </ActionButton>
 
           <ActionButton buttonColor='#90dc9e' title="New Task" onPress={() => console.log("notes tapped!")}>
             <Image
-              style={{width: 40, height: 40}}
-              source={require('./assets/rh-meter.png')} />
+              style={{width: 60, height: 90}}
+              source={require('./assets/rh-meter2.png')} />
           </ActionButton>
 
           <ActionButton buttonColor='#90dc9e' title="New Task" onPress={() => console.log("notes tapped!")}>
             <Image
-              style={{width: 40, height: 40}}
+              style={{width: 60, height: 90}}
               source={require('./assets/file.png')} />
           </ActionButton>
 
           <ActionButton buttonColor='#90dc9e' title="New" onPress={() => console.log("notes tapped!")}>
 
             <Image
-              style={{width: 40, height: 40}}
-              source={require('./assets/settings.png')} />
+              style={{width: 60, height: 90}}
+              source={require('./assets/settings2.png')} />
           </ActionButton>
+
+
 
         </ActionButton>
       </View>
@@ -55,7 +60,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#114656',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+
   },
   actionButtonIcon: {
     fontSize: 20,
@@ -64,6 +70,8 @@ const styles = StyleSheet.create({
   },
   teks:{
     textAlign:'center',
-    fontSize:28,
+    fontSize:20,
+    color :'white',
+
   }
 });
