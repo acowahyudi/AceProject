@@ -13,11 +13,13 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
+      
       <Image
-              style={{width: 450, height: 350}}
+              style={{width: 450, height: 300}}
               source={require('./assets/city1.gif')} />
-      <Text style={styles.teks}>Smart ACE Soil</Text>
-      <Text style={styles.teks}>(Adjusment, Controlling, Evaluation)</Text>
+      <Image
+              style={{width: 450, height: 75}}
+              source={require('./assets/logo.png')} />
         
         <ActionButton buttonColor="#fae45a" onPress={() => style={backgroundImage:'./assets/splash.png'}}>
           
