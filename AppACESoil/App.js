@@ -23,7 +23,7 @@ class HomeScreen extends React.Component {
       
 
         
-        <ActionButton buttonColor="#84d9f3">
+        <ActionButton buttonColor="#114656">
           
 
           <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => Alert.alert('pH Tanah Aman Terkendali!')}>
