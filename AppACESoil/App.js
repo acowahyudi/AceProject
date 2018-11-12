@@ -26,25 +26,25 @@ class HomeScreen extends React.Component {
         <ActionButton buttonColor="#114656">
           
 
-          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => Alert.alert('pH Tanah Aman Terkendali!')}>
+          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('pH')}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/ph-meter2.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('Details')}>
+          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('RH')}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/rh-meter2.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => console.log("notes tapped!")}>
+          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate("DT")}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/file.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => console.log("notes tapped!")}>
+          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("PGN")}>
 
             <Image
               style={{width: 60, height: 90}}
@@ -57,20 +57,76 @@ class HomeScreen extends React.Component {
   }
 }
 
-class DetailsScreen extends React.Component {
+class RHScreen extends React.Component {
+  static navigationOptions = {
+    title:'RH tanah',
+    headerStyle: {
+      backgroundColor: '#84d9f3',
+    },
+  };
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text>menu RH</Text>
       </View>
     );
   }
 }
 
+class pHScreen extends React.Component {
+  static navigationOptions = {
+    title:'pH tanah',
+    headerStyle: {
+      backgroundColor: '#84d9f3',
+    },
+  };
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>menu pH</Text>
+      </View>
+    );
+  }
+}
+
+class DtanamanScreen extends React.Component {
+  static navigationOptions = {
+    title:'Data Tanaman',
+    headerStyle: {
+      backgroundColor: '#84d9f3',
+    },
+  };
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>menu Data tanaman</Text>
+      </View>
+    );
+  }
+}
+
+class PengaturanScreen extends React.Component {
+  static navigationOptions = {
+    title:'Pengaturan',
+    headerStyle: {
+      backgroundColor: '#84d9f3',
+    },
+  };
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>menu pengaturan</Text>
+      </View>
+    );
+  }
+}
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen,
+    RH: RHScreen,
+    pH: pHScreen,
+    DT: DtanamanScreen,
+    PGN: PengaturanScreen,
   },
   {
     initialRouteName: 'Home',
@@ -89,6 +145,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#307e92',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    resizeMode:'contain',
 
   },
   actionButtonIcon: {
