@@ -1,11 +1,19 @@
 {
   "expo": {
-    "name": "AppACESoil",
+    "name": "SmartACESoil",
     "description": "This project is really great.",
+<<<<<<< HEAD
     "slug": "acowahyudi",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": [
+=======
+    "slug": "expo.io/@acowahyudi/SmartACESoil",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": [
+      "ios",
+>>>>>>> 31ce7d06dd8539b6e697eaec3237cf5ced3a6e03
       "android"
     ],
     "version": "1.0.0",
@@ -23,10 +31,14 @@
     ],
     "ios": {
       "supportsTablet": true
+<<<<<<< HEAD
     },
 
     "android": {
      "package": "com.nnp.smartacesoil"
    }
+=======
+    }
+>>>>>>> 31ce7d06dd8539b6e697eaec3237cf5ced3a6e03
   }
 }
