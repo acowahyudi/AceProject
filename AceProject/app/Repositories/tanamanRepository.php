@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class tanamanRepository
  * @package App\Repositories
- * @version November 12, 2018, 1:13 pm UTC
+ * @version November 12, 2018, 1:46 pm UTC
  *
  * @method tanaman findWithoutFail($id, $columns = ['*'])
  * @method tanaman find($id, $columns = ['*'])

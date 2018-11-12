@@ -19,3 +19,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('jenisParameters', 'jenis_parameterController');
+
+Route::resource('tanamen', 'tanamanController');
+
+Route::resource('tindakans', 'tindakanController');
+
+Route::resource('units', 'unitController');

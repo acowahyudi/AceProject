@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class tindakanRepository
  * @package App\Repositories
- * @version November 12, 2018, 1:14 pm UTC
+ * @version November 12, 2018, 1:47 pm UTC
  *
  * @method tindakan findWithoutFail($id, $columns = ['*'])
  * @method tindakan find($id, $columns = ['*'])

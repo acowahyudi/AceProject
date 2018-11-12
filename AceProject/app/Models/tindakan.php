@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class tindakan
  * @package App\Models
- * @version November 12, 2018, 1:14 pm UTC
+ * @version November 12, 2018, 1:47 pm UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection hasil
  * @property \Illuminate\Database\Eloquent\Collection permissionRole
