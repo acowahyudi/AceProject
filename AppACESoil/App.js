@@ -2,7 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Alert } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
-import { BarChart, XAxis, Grid } from 'react-native-svg-charts';
+import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
+
+
 
 class HomeScreen extends React.Component {
 	static navigationOptions = {
@@ -58,26 +60,26 @@ class HomeScreen extends React.Component {
   }
 }
 
-class RHScreen extends React.Component {
+class pHScreen extends React.Component {
   static navigationOptions = {
-    title:'RH tanah',
+    title:'pH tanah',
     headerStyle: {
       backgroundColor: '#84d9f3',
     },
   };
   render() {
-    const data = [ 50, 46, 70, 65, 60]
+       const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
     return (
       <View style={{ height: 400, padding: 20 }}>
-                <BarChart
+                <LineChart
                     style={{ flex: 1 }}
                     data={ data }
                     gridMin={ 1 }
                     contentInset={{ top: 10, bottom: 10 }}
-                    svg={{ stroke: 'rgb(134, 65, 244)', fill:'#84d9f3' }}
+                    svg={{ stroke: 'rgb(134, 65, 244)'}}
                 >
                     <Grid/>
-                </BarChart>
+                </LineChart>
                 <XAxis
                     style={{ marginHorizontal: 25 }}
                     data={ data }
@@ -90,26 +92,27 @@ class RHScreen extends React.Component {
   }
 }
 
-class pHScreen extends React.Component {
+class RHScreen extends React.Component {
   static navigationOptions = {
-    title:'pH tanah',
+    title:'RH tanah',
     headerStyle: {
       backgroundColor: '#84d9f3',
     },
   };
   render() {
-       const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
+    const data = [ 50, 46, 70, 65, 60]
     return (
       <View style={{ height: 400, padding: 20 }}>
-                <BarChart
+
+                <LineChart
                     style={{ flex: 1 }}
                     data={ data }
                     gridMin={ 1 }
                     contentInset={{ top: 10, bottom: 10 }}
-                    svg={{ stroke: 'rgb(134, 65, 244)', fill:'#84d9f3'}}
+                    svg={{ stroke: 'rgb(134, 65, 244)' }}
                 >
-                    <Grid/>
-                </BarChart>
+                    <Grid></Grid>
+                </LineChart>
                 <XAxis
                     style={{ marginHorizontal: 25 }}
                     data={ data }
@@ -117,7 +120,7 @@ class pHScreen extends React.Component {
                     contentInset={{ left: 10, right: 10 }}
                     svg={{ fontSize: 10, fill: 'black'}}
                 />
-            </View>
+      </View>
     );
   }
 }
