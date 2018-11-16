@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
@@ -18,8 +18,6 @@ class HomeScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-
-
       
       <Image
               style={{width: wp('100%'),height: hp('10%')}}
@@ -27,6 +25,9 @@ class HomeScreen extends React.Component {
       <Image
               style={{width: wp('100%'),height: hp('30%')}}
               source={require('./assets/city1.gif')} />
+
+    
+    </View>
       
 
         
@@ -62,6 +63,8 @@ class HomeScreen extends React.Component {
       </View>
 
     );
+
+
   }
 }
 
@@ -200,6 +203,13 @@ const styles = StyleSheet.create({
     fontSize:20,
     color :'white',
   },
+  market: {
+    flex:1,
+
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    resizeMode:'contain',
+  }
 
 
 });
