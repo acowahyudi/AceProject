@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, Alert } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 
 
@@ -16,18 +18,20 @@ class HomeScreen extends React.Component {
 
     return (
       <View style={styles.container}>
+
+
       
       <Image
-              style={{width: 450, height: 75}}
+              style={{width: wp('100%'),height: hp('10%')}}
               source={require('./assets/logo.png')} />
       <Image
-              style={{width: 450, height: 300}}
+              style={{width: wp('100%'),height: hp('30%')}}
               source={require('./assets/city1.gif')} />
       
 
         
         <ActionButton buttonColor="#114656">
-          
+         
 
           <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('pH')}>
             <Image
@@ -56,6 +60,7 @@ class HomeScreen extends React.Component {
 
         </ActionButton>
       </View>
+
     );
   }
 }
@@ -183,6 +188,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     resizeMode:'contain',
 
+
   },
   actionButtonIcon: {
     fontSize: 20,
@@ -193,6 +199,7 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontSize:20,
     color :'white',
+  },
 
-  }
+
 });
