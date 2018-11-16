@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
+import { ScrollView, Header } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
@@ -12,11 +13,15 @@ class HomeScreen extends React.Component {
 	static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
+  
     },
+
   };
   render() {
 
     return (
+
+
       <View style={styles.container}>
       
       <Image
@@ -52,6 +57,7 @@ class HomeScreen extends React.Component {
               source={require('./assets/file.png')} />
           </ActionButton>
 
+          
           <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("PGN")}>
 
             <Image
@@ -149,6 +155,22 @@ class DtanamanScreen extends React.Component {
   }
 }
 
+class marketScreen extends React.Component {
+  static navigationOptions = {
+    title:'Market Place',
+    headerStyle: {
+      backgroundColor: '#84d9f3',
+    },
+  };
+  render() {
+    return (
+      <ScrollView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>menu p</Text>
+      </ScrollView>
+    );
+  }
+}
+
 class PengaturanScreen extends React.Component {
   static navigationOptions = {
     title:'Pengaturan',
@@ -170,6 +192,7 @@ const RootStack = createStackNavigator(
     RH: RHScreen,
     pH: pHScreen,
     DT: DtanamanScreen,
+    mp: marketScreen,
     PGN: PengaturanScreen,
   },
   {
