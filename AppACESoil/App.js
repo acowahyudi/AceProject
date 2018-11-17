@@ -1,28 +1,37 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert,TouchableOpacity, Button } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
-import { createStackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
 import { ScrollView, Header } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-
+import { Icon } from 'react-native-elements';
 
 
 
 class HomeScreen extends React.Component {
-	static navigationOptions = {
+static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
-  
     },
-
+    
+    headerMode:'none',
+    
   };
+
   render() {
 
     return (
 
 
       <View style={styles.container}>
+
+      <Icon
+  raised
+  name='heartbeat'
+  type='font-awesome'
+  color='#f50'
+  onPress={() => console.log('hello')} />
 
 
       
@@ -70,6 +79,8 @@ class HomeScreen extends React.Component {
     );
   }
 }
+
+
 
 class pHScreen extends React.Component {
   static navigationOptions = {
@@ -183,7 +194,7 @@ class PengaturanScreen extends React.Component {
     );
   }
 }
-const RootStack = createStackNavigator(
+const RootStack = StackNavigator(
   {
     Home: HomeScreen,
     RH: RHScreen,
@@ -194,8 +205,10 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
-  }
+  },
+  
 );
+
 
 export default class App extends React.Component {
   render() {
