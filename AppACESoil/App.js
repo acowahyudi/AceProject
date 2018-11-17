@@ -1,5 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, Alert, Button, TouchableHighlight, ImageBackground } from 'react-native';
+=======
+<<<<<<< HEAD
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
+=======
+import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
+>>>>>>> 9c46a5bf24790d12331b352e036b76613becfbe5
+>>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
@@ -13,6 +21,11 @@ class HomeScreen extends React.Component {
   static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
+<<<<<<< HEAD
+=======
+  
+    }, 
+>>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
 
     },
   };
@@ -64,19 +77,23 @@ class HomeScreen extends React.Component {
           </ActionButton>
 
           
-          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("PGN")}>
+          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("mp")}>
 
             <Image
               style={{width: 60, height: 90}}
-              source={require('./assets/settings2.png')} />
+              source={require('./assets/market.png')} />
           </ActionButton>
 
         </ActionButton>
       </View>
+<<<<<<< HEAD
+       ) 
+=======
 
     );
 
 
+>>>>>>> 9c46a5bf24790d12331b352e036b76613becfbe5
   }
 }
 
@@ -198,28 +215,35 @@ class marketScreen extends React.Component {
   };
   render() {
     return (
+<<<<<<< HEAD
       <ScrollView style={{ flex: 1 }}>
         <Text>menu p</Text>
+=======
+      <ScrollView style={{container: 'black'}}>
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post1.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post2.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post3.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post2.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post1.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post3.png')} />
+>>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
       </ScrollView>
     );
   }
 }
 
-class PengaturanScreen extends React.Component {
-  static navigationOptions = {
-    title:'Pengaturan',
-    headerStyle: {
-      backgroundColor: '#84d9f3',
-    },
-  };
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>menu pengaturan</Text>
-      </View>
-    );
-  }
-}
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -227,7 +251,6 @@ const RootStack = createStackNavigator(
     pH: pHScreen,
     DT: DtanamanScreen,
     mp: marketScreen,
-    PGN: PengaturanScreen,
   },
   {
     initialRouteName: 'Home',
