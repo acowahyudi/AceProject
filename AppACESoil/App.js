@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Icon } from 'react-native-elements';
@@ -22,10 +22,10 @@ class HomeScreen extends React.Component {
 
     <Icon
       raised
-      name='heartbeat'
+      name='shopping-cart'
       type='font-awesome'
-      color='#f50'
-      onPress={() => console.log('hello')} />
+      color='#307e92'
+      onPress={() => this.props.navigation.navigate('mp')} />
 
 
         <ActionButton buttonColor="#114656">
@@ -219,7 +219,7 @@ class PengaturanScreen extends React.Component {
     );
   }
 }
-const RootStack = StackNavigator(
+const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     RH: RHScreen,
