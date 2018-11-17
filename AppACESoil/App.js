@@ -73,6 +73,7 @@ class pHScreen extends React.Component {
        const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
     return (
       <View style={{ height: 450, padding: 20 }}>
+      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('100%') }} source={require('./assets/bgph.png')}/>
                 <LineChart
                     style={{ flex: 1 }}
                     data={ data }
@@ -90,8 +91,8 @@ class pHScreen extends React.Component {
                     svg={{ fontSize: 10, fill: 'black'}}
                 />
 
-                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 16}}>
-                <Text>pH Tanah Terbaru</Text>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 16, width: wp('90%'), height: hp('5%')}}>
+                pH Tanah Terbaru
                 </Text>
                 <TouchableHighlight>
                   <Text style={styles.teksph}>1000data[value]</Text>
@@ -116,6 +117,7 @@ class RHScreen extends React.Component {
     const data = [ 50, 46, 70, 65, 60]
     return (
       <View style={{ height: 450, padding: 20 }}>
+      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('100%') }} source={require('./assets/bgph.png')}/>
 
                 <LineChart
                     style={{ flex: 1 }}
@@ -178,7 +180,7 @@ class marketScreen extends React.Component {
   render() {
     return (
       <ScrollView style={{container: 'black'}}>
-
+      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('300%') }} source={require('./assets/splash.png')}/>
         <Image
               style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
               source={require('./assets/post1.png')} />
