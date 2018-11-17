@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
@@ -10,45 +10,46 @@ import { Icon } from 'react-native-elements';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
+    headerRight:(<TouchableOpacity style={{padding:5}} onPress={() => {Alert.alert('Welcome To Smart Garden');}}>
+      <Image
+              style={{width: wp('35%'), height: hp('50%'), resizeMode:'contain'}}
+              source={require('./assets/logo.gif')} />
+      </TouchableOpacity>
+  ),
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
-  };
+    
+
+  }
 
   render() {
 
     return (
     <View style={styles.container}>
 
-    <Icon
-      raised
-      name='shopping-cart'
-      type='font-awesome'
-      color='#307e92'
-      onPress={() => this.props.navigation.navigate('mp')} />
-
 
         <ActionButton buttonColor="#114656">
          
-          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('pH')}>
+          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate('pH')}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/ph-meter2.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('RH')}>
+          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate('RH')}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/rh-meter2.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate("DT")}>
+          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate("DT")}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/file.png')} />
           </ActionButton>
           
-          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("mp")}>
+          <ActionButton buttonColor='#d77500' title="New" onPress={() => this.props.navigation.navigate("mp")}>
 
             <Image
               style={{width: 60, height: 90}}
@@ -246,7 +247,7 @@ const styles = StyleSheet.create({
   container: {
 
     flex: 1,
-    backgroundColor: '#307e92',
+    backgroundColor: '#599e21',
     alignItems: 'center',
     justifyContent: 'flex-start',
     resizeMode:'contain',
