@@ -9,62 +9,27 @@ import { Icon } from 'react-native-elements';
 
 
 class HomeScreen extends React.Component {
-static navigationOptions = {
+  static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
     },
-    
-    headerMode:'none',
-    
   };
 
   render() {
 
     return (
-
-
     <View style={styles.container}>
- 
 
-      <View style={styles.container}>
-
-      <Icon
-  raised
-  name='heartbeat'
-  type='font-awesome'
-  color='#f50'
-  onPress={() => console.log('hello')} />
-
-
-
-
-
-
-      <Image
-              style={{width: wp('100%'),height: hp('10%')}}
-              source={require('./assets/logo.png')} />
-
-      <Image
-              style={{width: wp('100%'),height: hp('30%')}}
-              source={require('./assets/city1.gif')} />
-      
-
-
-              <TouchableHighlight>
-                
-                <Text style={styles.teksstatus}>1000data[value]</Text>
-
-                </TouchableHighlight>
-                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 18, color: '#ffffff'}}>
-                <Text>Status Tanah : Aman</Text>
-                </Text>
-
-    
+    <Icon
+      raised
+      name='heartbeat'
+      type='font-awesome'
+      color='#f50'
+      onPress={() => console.log('hello')} />
 
 
         <ActionButton buttonColor="#114656">
          
-
           <ActionButton buttonColor='#ffcc5c' title="New Task" onPress={() => this.props.navigation.navigate('pH')}>
             <Image
               style={{width: 60, height: 90}}
@@ -82,7 +47,6 @@ static navigationOptions = {
               style={{width: 60, height: 90}}
               source={require('./assets/file.png')} />
           </ActionButton>
-
           
           <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("mp")}>
 
@@ -92,19 +56,11 @@ static navigationOptions = {
           </ActionButton>
 
         </ActionButton>
-      </View>
+    </View>
 
-
-      );
-
-  }  
-
-       ) 
+    );
   }
-
 }
-
-
 
 class pHScreen extends React.Component {
   static navigationOptions = {
@@ -143,10 +99,7 @@ class pHScreen extends React.Component {
                 <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 10, fontSize: 16}}>
                 <Text>Status Tanah : Aman</Text>
                 </Text>
-      
-
       </View>
-
     );
   }
 }
@@ -158,6 +111,7 @@ class RHScreen extends React.Component {
       backgroundColor: '#84d9f3',
     },
   };
+  
   render() {
     const data = [ 50, 46, 70, 65, 60]
     return (
@@ -204,6 +158,7 @@ class DtanamanScreen extends React.Component {
       backgroundColor: '#84d9f3',
     },
   };
+  
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -222,16 +177,6 @@ class marketScreen extends React.Component {
   };
   render() {
     return (
-
-
-
-
-      <ScrollView style={{container: 'black '}}>
-
-
-      <ScrollView style={{ flex: 1 }}>
-        <Text>menu p</Text>
-
       <ScrollView style={{container: 'black'}}>
 
         <Image
@@ -265,6 +210,7 @@ class PengaturanScreen extends React.Component {
       backgroundColor: '#84d9f3',
     },
   };
+  
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -284,6 +230,9 @@ const RootStack = StackNavigator(
   {
     initialRouteName: 'Home',
   },
+  {
+    headerMode:'none',
+  }
 );
 
 
