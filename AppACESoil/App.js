@@ -1,20 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
-=======
-<<<<<<< HEAD
->>>>>>> a99bf923e8b656aab017e41719eb31210f90d862
 import { StyleSheet, Text, View, Image, Alert, Button, TouchableHighlight, ImageBackground } from 'react-native';
 import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
 import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
-<<<<<<< HEAD
-=======
->>>>>>> 9c46a5bf24790d12331b352e036b76613becfbe5
->>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
->>>>>>> 0c936cb392d6ae8e71959d998067993e61af5127
->>>>>>> a99bf923e8b656aab017e41719eb31210f90d862
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
@@ -29,34 +17,33 @@ class HomeScreen extends React.Component {
     headerStyle: {
       backgroundColor: '#84d9f3',
     },
+  },
+ };
 
   render() {
 
     return (
 
 
-<<<<<<< HEAD
     <View style={styles.container}>
  
-=======
+
       <View style={styles.container}>
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 0c936cb392d6ae8e71959d998067993e61af5127
-      
->>>>>>> a99bf923e8b656aab017e41719eb31210f90d862
+
+
+
       <Image
               style={{width: wp('100%'),height: hp('10%')}}
               source={require('./assets/logo.png')} />
-<<<<<<< HEAD
+
       <Image
               style={{width: wp('100%'),height: hp('30%')}}
               source={require('./assets/city1.gif')} />
       
-=======
+
 
               <TouchableHighlight>
                 
@@ -68,7 +55,7 @@ class HomeScreen extends React.Component {
                 </Text>
 
     
->>>>>>> 0c936cb392d6ae8e71959d998067993e61af5127
+
 
         <ActionButton buttonColor="#114656">
          
@@ -101,15 +88,15 @@ class HomeScreen extends React.Component {
 
         </ActionButton>
       </View>
-<<<<<<< HEAD
+
 
       );
 
   }  
-=======
+
        ) 
   }
->>>>>>> a99bf923e8b656aab017e41719eb31210f90d862
+
 }
 
 
@@ -230,19 +217,18 @@ class marketScreen extends React.Component {
   };
   render() {
     return (
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
+
+
+
       <ScrollView style={{container: 'black '}}>
-=======
-<<<<<<< HEAD
->>>>>>> a99bf923e8b656aab017e41719eb31210f90d862
+
+
       <ScrollView style={{ flex: 1 }}>
         <Text>menu p</Text>
 
       <ScrollView style={{container: 'black'}}>
->>>>>>> 0c936cb392d6ae8e71959d998067993e61af5127
+
         <Image
               style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
               source={require('./assets/post1.png')} />
@@ -307,8 +293,7 @@ const styles = StyleSheet.create({
     fontSize:20,
     color :'white',
   },
-<<<<<<< HEAD
-=======
+
 
   market: {
     flex:1,
@@ -353,6 +338,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 90,
 
   }
->>>>>>> 0c936cb392d6ae8e71959d998067993e61af5127
 
 });
