@@ -1,13 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, Alert, Button, TouchableHighlight, ImageBackground } from 'react-native';
-=======
-<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
-=======
 import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
->>>>>>> 9c46a5bf24790d12331b352e036b76613becfbe5
->>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
@@ -21,25 +15,15 @@ class HomeScreen extends React.Component {
   static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
-<<<<<<< HEAD
-=======
-  
-    }, 
->>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
-
     },
-  };
 
   render() {
 
     return (
 
 
-      <View style={styles.container}>
-
-
-
-      
+    <View style={styles.container}>
+ 
       <Image
               style={{width: wp('100%'),height: hp('10%')}}
               source={require('./assets/logo.png')} />
@@ -86,15 +70,10 @@ class HomeScreen extends React.Component {
 
         </ActionButton>
       </View>
-<<<<<<< HEAD
-       ) 
-=======
 
-    );
+      );
 
-
->>>>>>> 9c46a5bf24790d12331b352e036b76613becfbe5
-  }
+  }  
 }
 
 
@@ -215,10 +194,10 @@ class marketScreen extends React.Component {
   };
   render() {
     return (
-<<<<<<< HEAD
+
       <ScrollView style={{ flex: 1 }}>
         <Text>menu p</Text>
-=======
+
       <ScrollView style={{container: 'black'}}>
         <Image
               style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
@@ -238,7 +217,7 @@ class marketScreen extends React.Component {
         <Image
               style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
               source={require('./assets/post3.png')} />
->>>>>>> 764c76bd21644f1bb1f5311f75dfd74af3988fa8
+
       </ScrollView>
     );
   }
@@ -254,7 +233,7 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
-  }
+  },
 );
 
 export default class App extends React.Component {
@@ -328,8 +307,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 90,
 
   }
-
-
-
 
 });
