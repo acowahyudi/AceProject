@@ -1,23 +1,14 @@
 import React from 'react';
-<<<<<<< HEAD
-import { StyleSheet, Text, View, Image, Alert,TouchableOpacity, Button } from 'react-native';
-=======
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
-import { StyleSheet, Text, View, Image, Alert, Button, TouchableHighlight, ImageBackground } from 'react-native';
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
-import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
->>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { StackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
-import { ScrollView } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Icon } from 'react-native-elements';
 
 
 
 class HomeScreen extends React.Component {
-<<<<<<< HEAD
 static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
@@ -26,14 +17,6 @@ static navigationOptions = {
     headerMode:'none',
     
   };
-=======
-  static navigationOptions = {
-    headerStyle: {
-      backgroundColor: '#84d9f3',
-    },
-  },
- };
->>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
 
   render() {
 
@@ -275,7 +258,6 @@ class marketScreen extends React.Component {
   }
 }
 
-<<<<<<< HEAD
 class PengaturanScreen extends React.Component {
   static navigationOptions = {
     title:'Pengaturan',
@@ -292,9 +274,6 @@ class PengaturanScreen extends React.Component {
   }
 }
 const RootStack = StackNavigator(
-=======
-const RootStack = createStackNavigator(
->>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
   {
     Home: HomeScreen,
     RH: RHScreen,
@@ -305,10 +284,6 @@ const RootStack = createStackNavigator(
   {
     initialRouteName: 'Home',
   },
-<<<<<<< HEAD
-  
-=======
->>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
 );
 
 
