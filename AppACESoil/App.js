@@ -1,15 +1,23 @@
 import React from 'react';
+<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, Alert,TouchableOpacity, Button } from 'react-native';
+=======
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, Button, TouchableHighlight, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, Button } from 'react-native';
+>>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
 import ActionButton from 'react-native-circular-action-menu';
 import { StackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
-import { ScrollView, Header } from 'react-native';
+import { ScrollView } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Icon } from 'react-native-elements';
 
 
 
 class HomeScreen extends React.Component {
+<<<<<<< HEAD
 static navigationOptions = {
     headerStyle: {
       backgroundColor: '#84d9f3',
@@ -18,11 +26,22 @@ static navigationOptions = {
     headerMode:'none',
     
   };
+=======
+  static navigationOptions = {
+    headerStyle: {
+      backgroundColor: '#84d9f3',
+    },
+  },
+ };
+>>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
 
   render() {
 
     return (
 
+
+    <View style={styles.container}>
+ 
 
       <View style={styles.container}>
 
@@ -34,16 +53,32 @@ static navigationOptions = {
   onPress={() => console.log('hello')} />
 
 
-      
+
+
+
+
       <Image
               style={{width: wp('100%'),height: hp('10%')}}
               source={require('./assets/logo.png')} />
+
       <Image
               style={{width: wp('100%'),height: hp('30%')}}
               source={require('./assets/city1.gif')} />
       
 
-        
+
+              <TouchableHighlight>
+                
+                <Text style={styles.teksstatus}>1000data[value]</Text>
+
+                </TouchableHighlight>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 18, color: '#ffffff'}}>
+                <Text>Status Tanah : Aman</Text>
+                </Text>
+
+    
+
+
         <ActionButton buttonColor="#114656">
          
 
@@ -66,18 +101,24 @@ static navigationOptions = {
           </ActionButton>
 
           
-          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("PGN")}>
+          <ActionButton buttonColor='#ffcc5c' title="New" onPress={() => this.props.navigation.navigate("mp")}>
 
             <Image
               style={{width: 60, height: 90}}
-              source={require('./assets/settings2.png')} />
+              source={require('./assets/market.png')} />
           </ActionButton>
 
         </ActionButton>
       </View>
 
-    );
+
+      );
+
+  }  
+
+       ) 
   }
+
 }
 
 
@@ -92,7 +133,7 @@ class pHScreen extends React.Component {
   render() {
        const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
     return (
-      <View style={{ height: 400, padding: 20 }}>
+      <View style={{ height: 450, padding: 20 }}>
                 <LineChart
                     style={{ flex: 1 }}
                     data={ data }
@@ -109,7 +150,20 @@ class pHScreen extends React.Component {
                     contentInset={{ left: 10, right: 10 }}
                     svg={{ fontSize: 10, fill: 'black'}}
                 />
-            </View>
+
+                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 16}}>
+                <Text>pH Tanah Terbaru</Text>
+                </Text>
+                <TouchableHighlight>
+                  <Text style={styles.teksph}>1000data[value]</Text>
+                </TouchableHighlight>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 10, fontSize: 16}}>
+                <Text>Status Tanah : Aman</Text>
+                </Text>
+      
+
+      </View>
+
     );
   }
 }
@@ -124,7 +178,7 @@ class RHScreen extends React.Component {
   render() {
     const data = [ 50, 46, 70, 65, 60]
     return (
-      <View style={{ height: 400, padding: 20 }}>
+      <View style={{ height: 450, padding: 20 }}>
 
                 <LineChart
                     style={{ flex: 1 }}
@@ -142,7 +196,20 @@ class RHScreen extends React.Component {
                     contentInset={{ left: 10, right: 10 }}
                     svg={{ fontSize: 10, fill: 'black'}}
                 />
+
+                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 16}}>
+                <Text>RH Tanah Terbaru</Text>
+                </Text>
+                <TouchableHighlight>
+                  <Text style={styles.teksph}>1000data[value]</Text>
+                </TouchableHighlight>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 10, fontSize: 16}}>
+                <Text>Status Tanah : Aman</Text>
+                </Text>
+
       </View>
+
+
     );
   }
 }
@@ -172,13 +239,43 @@ class marketScreen extends React.Component {
   };
   render() {
     return (
-      <ScrollView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+
+
+
+      <ScrollView style={{container: 'black '}}>
+
+
+      <ScrollView style={{ flex: 1 }}>
         <Text>menu p</Text>
+
+      <ScrollView style={{container: 'black'}}>
+
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post1.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post2.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post3.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post2.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post1.png')} />
+        <Image
+              style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
+              source={require('./assets/post3.png')} />
+
       </ScrollView>
     );
   }
 }
 
+<<<<<<< HEAD
 class PengaturanScreen extends React.Component {
   static navigationOptions = {
     title:'Pengaturan',
@@ -195,18 +292,23 @@ class PengaturanScreen extends React.Component {
   }
 }
 const RootStack = StackNavigator(
+=======
+const RootStack = createStackNavigator(
+>>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
   {
     Home: HomeScreen,
     RH: RHScreen,
     pH: pHScreen,
     DT: DtanamanScreen,
     mp: marketScreen,
-    PGN: PengaturanScreen,
   },
   {
     initialRouteName: 'Home',
   },
+<<<<<<< HEAD
   
+=======
+>>>>>>> 3773f7c7393a6677cc6f527c07ed4d91412ce2ef
 );
 
 
@@ -218,24 +320,69 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+
     flex: 1,
     backgroundColor: '#307e92',
     alignItems: 'center',
     justifyContent: 'flex-start',
     resizeMode:'contain',
-
-
   },
+
   actionButtonIcon: {
     fontSize: 20,
     height: 22,
     color: 'white',
   },
+
   teks:{
     textAlign:'center',
     fontSize:20,
     color :'white',
   },
 
+
+  market: {
+    flex:1,
+
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    resizeMode:'contain',
+  },
+
+  satu: {
+    //padding: 10,
+    alignItems: 'flex-start',
+    //width: wp('10%'),
+    //height: hp('10%'),
+    flex: 1, 
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
+  teksph: {
+
+    fontWeight: 'bold', 
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: '#84d9f3',
+    borderRadius: 10,
+    paddingVertical: 40,
+    marginHorizontal: 90,
+
+  },
+
+  teksstatus: {
+    width: 250,
+    fontWeight: 'bold',
+    fontSize: 20, 
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: '#84d9f3',
+    borderRadius: 150,
+    paddingVertical: 45,
+    marginVertical: 40,
+    marginHorizontal: 90,
+
+  }
 
 });
