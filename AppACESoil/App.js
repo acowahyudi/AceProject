@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, Button } from 'react-native';
-=======
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
->>>>>>> 650af1c3e1a7f52a463731de04f51d2341b76a56
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity, Button } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
