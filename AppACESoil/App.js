@@ -1,10 +1,14 @@
 import React from 'react';
+<<<<<<< HEAD
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, Button } from 'react-native';
+=======
 import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
+>>>>>>> 650af1c3e1a7f52a463731de04f51d2341b76a56
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { Icon } from 'react-native-elements';
+import { Icon, Card } from 'react-native-elements';
 
 import kartu from './card';
 
@@ -165,10 +169,60 @@ class DtanamanScreen extends React.Component {
   };
   
   render() {
+    const data = [ 5.5, 4.6, 6.3, 6.5, 6.0];
+    $tes=data[0];
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>menu Data tanaman</Text>
-      </View>
+      <ScrollView style={{ flex: 1}} >
+        <Card title="Sawi Pakcoy">
+                  <Image
+                    style={styles.image}
+                    resizeMode="contain"
+                    justifyContent='center'
+                    source={require('./assets/sawi.png')}
+                  />
+                  <Button onPress={() => {Alert.alert(
+                    'Sawi Pakcoy',
+                      'pH Optimal : 6 - 7 '+
+                      'RH Optimal : 70 - 90%',
+                    );}} title="Detail"/>
+
+            
+        </Card>
+
+          <Card title="Cabai">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/lombok.png')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Cabai',
+                  'pH Optimal : 5,6 - 7 '+
+                  'RH Optimal : 70 - 80%',
+              );}} title="Detail"/>
+
+
+          </Card>
+
+          <Card title="Tomat">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/tomat.png')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Tomat',
+                  'pH Optimal : 5 - 6 '+
+                  'RH Optimal : 70 - 90%',
+              );}} title="Detail"/>
+
+
+          </Card>
+
+
+      </ScrollView>
     );
   }
 }
@@ -248,6 +302,8 @@ export default class App extends React.Component {
 	}
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
 
@@ -313,6 +369,13 @@ const styles = StyleSheet.create({
     marginVertical: 40,
     marginHorizontal: 90,
 
+  },
+
+  image: {
+      width: 250,
+      height: 150,
+      alignItems: 'center',
+      justifyContent: 'center',
   }
 
 });
