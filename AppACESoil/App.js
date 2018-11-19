@@ -6,7 +6,6 @@ import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Icon, Card } from 'react-native-elements';
 
-import kartu from './card';
 
 
 
@@ -45,7 +44,7 @@ class HomeScreen extends React.Component {
               source={require('./assets/rh-meter2.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate("ks")}>
+          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate("DT")}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/file.png')} />
@@ -69,7 +68,7 @@ class pHScreen extends React.Component {
   static navigationOptions = {
     title:'pH tanah',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   render() {
@@ -112,7 +111,7 @@ class RHScreen extends React.Component {
   static navigationOptions = {
     title:'RH tanah',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   
@@ -160,13 +159,12 @@ class DtanamanScreen extends React.Component {
   static navigationOptions = {
     title:'Data Tanaman',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   
   render() {
     const data = [ 5.5, 4.6, 6.3, 6.5, 6.0];
-    $tes=data[0];
     return (
       <ScrollView style={{ flex: 1}} >
         <Card title="Sawi Pakcoy">
@@ -227,7 +225,7 @@ class marketScreen extends React.Component {
   static navigationOptions = {
     title:'Market Place',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   render() {
@@ -262,7 +260,7 @@ class PengaturanScreen extends React.Component {
   static navigationOptions = {
     title:'Pengaturan',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   
@@ -281,7 +279,6 @@ const RootStack = createStackNavigator(
     pH: pHScreen,
     DT: DtanamanScreen,
     mp: marketScreen,
-    ks: { screen: kartu }
   },
   {
     initialRouteName: 'Home',
