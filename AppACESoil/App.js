@@ -6,6 +6,8 @@ import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Icon } from 'react-native-elements';
 
+import kartu from './card';
+
 
 
 class HomeScreen extends React.Component {
@@ -43,7 +45,7 @@ class HomeScreen extends React.Component {
               source={require('./assets/rh-meter2.png')} />
           </ActionButton>
 
-          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate("DT")}>
+          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate("ks")}>
             <Image
               style={{width: 60, height: 90}}
               source={require('./assets/file.png')} />
@@ -229,6 +231,7 @@ const RootStack = createStackNavigator(
     pH: pHScreen,
     DT: DtanamanScreen,
     mp: marketScreen,
+    ks: { screen: kartu }
   },
   {
     initialRouteName: 'Home',
