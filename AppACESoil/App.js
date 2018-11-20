@@ -10,6 +10,7 @@ import ImageSlider from 'react-native-image-slider';
 import Infoslider from 'react-native-infoslider';
 
 
+
 class HomeScreen extends React.Component {
     static navigationOptions = {
         headerRight: (<TouchableOpacity style={{padding: 5}} onPress={() => {
@@ -113,7 +114,7 @@ class pHScreen extends React.Component {
   static navigationOptions = {
     title:'pH tanah',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   render() {
@@ -156,7 +157,7 @@ class RHScreen extends React.Component {
   static navigationOptions = {
     title:'RH tanah',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   
@@ -204,7 +205,7 @@ class DtanamanScreen extends React.Component {
   static navigationOptions = {
     title:'Data Tanaman',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
 
@@ -212,7 +213,6 @@ class DtanamanScreen extends React.Component {
   render() {
 
     const data = [ 5.5, 4.6, 6.3, 6.5, 6.0];
-    $tes=data[0];
     return (
       <ScrollView style={{ flex: 1}} >
        <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('1500%') }} source={require('./assets/splash.png')}/>
@@ -338,7 +338,7 @@ class marketScreen extends React.Component {
   static navigationOptions = {
     title:'Market Place',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   render() {
@@ -373,7 +373,7 @@ class PengaturanScreen extends React.Component {
   static navigationOptions = {
     title:'Pengaturan',
     headerStyle: {
-      backgroundColor: '#84d9f3',
+      backgroundColor: '#297793',
     },
   };
   
