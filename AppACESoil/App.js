@@ -1,67 +1,113 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
 import ActionButton from 'react-native-circular-action-menu';
 import { createStackNavigator } from 'react-navigation';
 import { LineChart, XAxis, Grid } from 'react-native-svg-charts';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { Icon, Card } from 'react-native-elements';
-
+import { Icon, Card, Button } from 'react-native-elements';
+import AwesomeAlert from 'react-native-awesome-alerts';
+import ImageSlider from 'react-native-image-slider';
+import Infoslider from 'react-native-infoslider';
 
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    headerRight:(<TouchableOpacity style={{padding:5}} onPress={() => {Alert.alert('Welcome To Smart Garden');}}>
-      <Image
-              style={{width: wp('35%'), height: hp('50%'), resizeMode:'contain'}}
-              source={require('./assets/logo.gif')} />
-      </TouchableOpacity>
-  ),
-    headerStyle: {
-      backgroundColor: '#297793',
-    },
-    
+    static navigationOptions = {
+        headerRight: (<TouchableOpacity style={{padding: 5}} onPress={() => {
+                Alert.alert('Welcome To Smart Garden');
+            }}>
+                <Image
+                    style={{width: wp('35%'), height: hp('50%'), resizeMode: 'contain'}}
+                    source={require('./assets/logo.gif')}/>
+            </TouchableOpacity>
+        ),
+        headerStyle: {
+            backgroundColor: '#297793',
+        },
+    }
 
-  }
+    constructor(props) {
+        super(props);
 
-  render() {
+        this.state = {
+            data:[
+                {
+                    title:"Hello Farmer",
+                    text:"Selamat datang di aplikasi Smart Garden, Aplikasi untuk membantu anda mengetahui kondisi tanah pertanian",
+                    image: require('./assets/splash12.jpg')},
+                {
+                    title:"Apa itu Smart Garden ?",
+                    text:"Smart Garden adalah aplikasi android yang menampilkan data tentang pH dan RH tanah yang terintegrasi langsung dengan alat dari smart garden",
+                    image: require('./assets/bayam.jpg')},
+                {
+                    title:"Cara kerjanya ?",
+                    text:"Alat akan mendeteksi pH dan RH tanah kemudian menampilkannya di aplikasi, tidak hanya kita juga bisa mengakses melalui Telegram, WhatsApp, dan SMS",
+                    image: require('./assets/tomat.png')},
+                {
+                    title:"Kenapa harus Smart Garden ?",
+                    text:"Karena Smart Garden menawarkan kemudahan, kecepatan, keakuratan, dan kepraktisan dalam mengetahui kondisi tanah pertanian",
+                    image: require('./assets/jagung.png')},
+
+            ]
+        };
+    }
+
+
+    render() {
 
     return (
-    <View style={styles.container}>
 
+            <View style={styles.container}>
 
-        <ActionButton buttonColor="#114656">
-         
-          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate('pH')}>
-            <Image
-              style={{width: 60, height: 90}}
-              source={require('./assets/ph-meter2.png')} />
-          </ActionButton>
+                <View style={styles.infoslider}>
+                <Infoslider
+                    data={this.state.data}
+                    showDots={true}
+                    activeDotColor="#666"
+                    titleColor="#000"
+                    textColor="#666"
+                    loop={true}
+                    autoplay={true}
+                    autoplayTimeout={9}/>
+                </View>
 
-          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate('RH')}>
-            <Image
-              style={{width: 60, height: 90}}
-              source={require('./assets/rh-meter2.png')} />
-          </ActionButton>
+                <ActionButton buttonColor="#114656">
 
-          <ActionButton buttonColor='#d77500' title="New Task" onPress={() => this.props.navigation.navigate("DT")}>
-            <Image
-              style={{width: 60, height: 90}}
-              source={require('./assets/file.png')} />
-          </ActionButton>
-          
-          <ActionButton buttonColor='#d77500' title="New" onPress={() => this.props.navigation.navigate("mp")}>
+                    <ActionButton buttonColor='#d77500' title="New Task"
+                                  onPress={() => this.props.navigation.navigate('pH')}>
+                        <Image
+                            style={{width: 60, height: 90}}
+                            source={require('./assets/ph-meter2.png')}/>
+                    </ActionButton>
 
-            <Image
-              style={{width: 60, height: 90}}
-              source={require('./assets/market.png')} />
-          </ActionButton>
+                    <ActionButton buttonColor='#d77500' title="New Task"
+                                  onPress={() => this.props.navigation.navigate('RH')}>
+                        <Image
+                            style={{width: 60, height: 90}}
+                            source={require('./assets/rh-meter2.png')}/>
+                    </ActionButton>
 
-        </ActionButton>
-    </View>
+                    <ActionButton buttonColor='#d77500' title="New Task"
+                                  onPress={() => this.props.navigation.navigate("DT")}>
+                        <Image
+                            style={{width: 60, height: 90}}
+                            source={require('./assets/file.png')}/>
+                    </ActionButton>
 
-    );
-  }
+                    <ActionButton buttonColor='#d77500' title="New"
+                                  onPress={() => this.props.navigation.navigate("mp")}>
+
+                        <Image
+                            style={{width: 60, height: 90}}
+                            source={require('./assets/market.png')}/>
+                    </ActionButton>
+
+                </ActionButton>
+            </View>
+
+        );
+    }
 }
+
 
 class pHScreen extends React.Component {
   static navigationOptions = {
@@ -73,32 +119,32 @@ class pHScreen extends React.Component {
   render() {
        const data = [ 5.5, 4.6, 6.3, 6.5, 6.0]
     return (
-      <View style={{ height: 450, padding: 20 }}>
-      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('100%') }} source={require('./assets/bgph.png')}/>
+      <View style={{ height: 550, padding: 10, width: wp('100%'), height: hp('80%') }}>
+      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('98%') }} source={require('./assets/splash4.gif')}/>
                 <LineChart
-                    style={{ flex: 1 }}
+                    style={{ flex: 1}}
                     data={ data }
                     gridMin={ 1 }
                     contentInset={{ top: 10, bottom: 10 }}
-                    svg={{ stroke: 'rgb(134, 65, 244)'}}
+                    svg={{ stroke: 'white'}}
                 >
                     <Grid/>
                 </LineChart>
                 <XAxis
-                    style={{ marginHorizontal: 25 }}
+                    style={{ marginHorizontal: 25}}
                     data={ data }
                     formatLabel={ value => data[value]+"%" }
                     contentInset={{ left: 10, right: 10 }}
-                    svg={{ fontSize: 10, fill: 'black'}}
+                    svg={{ fontSize: 10, fill: 'white'}}
                 />
 
-                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 16, width: wp('90%'), height: hp('5%')}}>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 30, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
                 pH Tanah Terbaru
                 </Text>
-                <TouchableHighlight>
+                <TouchableHighlight style={{alignItems: 'center'}}>
                   <Text style={styles.teksph}>1000data[value]</Text>
                 </TouchableHighlight>
-                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 10, fontSize: 16}}>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
                 <Text>Status Tanah : Aman</Text>
                 </Text>
       </View>
@@ -117,15 +163,15 @@ class RHScreen extends React.Component {
   render() {
     const data = [ 50, 46, 70, 65, 60]
     return (
-      <View style={{ height: 450, padding: 20 }}>
-      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('100%') }} source={require('./assets/bgph.png')}/>
+      <View style={{ height: 550, padding: 10, width: wp('100%'), height: hp('80%') }}>
+      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('98%') }} source={require('./assets/splash4.gif')}/>
 
                 <LineChart
                     style={{ flex: 1 }}
                     data={ data }
                     gridMin={ 1 }
                     contentInset={{ top: 10, bottom: 10 }}
-                    svg={{ stroke: 'rgb(134, 65, 244)' }}
+                    svg={{ stroke: 'white' }}
                 >
                     <Grid></Grid>
                 </LineChart>
@@ -134,18 +180,18 @@ class RHScreen extends React.Component {
                     data={ data }
                     formatLabel={ value => data[value]+"%" }
                     contentInset={{ left: 10, right: 10 }}
-                    svg={{ fontSize: 10, fill: 'black'}}
+                    svg={{ fontSize: 10, fill: 'white'}}
                 />
 
-                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 30, fontSize: 16}}>
-                <Text>RH Tanah Terbaru</Text>
-                </Text>
-                <TouchableHighlight>
-                  <Text style={styles.teksph}>1000data[value]</Text>
-                </TouchableHighlight>
-                <Text style={{fontWeight: 'bold', textAlign: 'center', marginVertical: 10, fontSize: 16}}>
-                <Text>Status Tanah : Aman</Text>
-                </Text>
+              <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 30, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
+              RH Tanah Terbaru
+              </Text>
+              <TouchableHighlight style={{alignItems: 'center'}}>
+              <Text style={styles.teksph}>1000data[value]</Text>
+              </TouchableHighlight>
+              <Text style={{fontWeight: 'bold', textAlign: 'center', alignItems: 'center', marginVertical: 20, fontSize: 16, width: wp('100%'), color: '#ffffff'}}>
+              <Text>Status Tanah : Aman</Text>
+              </Text>
 
       </View>
 
@@ -161,12 +207,15 @@ class DtanamanScreen extends React.Component {
       backgroundColor: '#84d9f3',
     },
   };
-  
+
+
   render() {
+
     const data = [ 5.5, 4.6, 6.3, 6.5, 6.0];
     $tes=data[0];
     return (
       <ScrollView style={{ flex: 1}} >
+       <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('1500%') }} source={require('./assets/splash.png')}/>
         <Card title="Sawi Pakcoy">
                   <Image
                     style={styles.image}
@@ -174,13 +223,11 @@ class DtanamanScreen extends React.Component {
                     justifyContent='center'
                     source={require('./assets/sawi.png')}
                   />
-                  <Button onPress={() => {Alert.alert(
-                    'Sawi Pakcoy',
-                      'pH Optimal : 6 - 7 '+
-                      'RH Optimal : 70 - 90%',
-                    );}} title="Detail"/>
+            <Button onPress={() => {Alert.alert(
+                'Tomat',
+                'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+            );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
-            
         </Card>
 
           <Card title="Cabai">
@@ -191,11 +238,9 @@ class DtanamanScreen extends React.Component {
                   source={require('./assets/lombok.png')}
               />
               <Button onPress={() => {Alert.alert(
-                  'Cabai',
-                  'pH Optimal : 5,6 - 7 '+
-                  'RH Optimal : 70 - 80%',
-              );}} title="Detail"/>
-
+                  'Tomat',
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
           </Card>
 
@@ -208,10 +253,78 @@ class DtanamanScreen extends React.Component {
               />
               <Button onPress={() => {Alert.alert(
                   'Tomat',
-                  'pH Optimal : 5 - 6 '+
-                  'RH Optimal : 70 - 90%',
-              );}} title="Detail"/>
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
+          </Card>
+
+          <Card title="Jagung">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/jagung.png')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Jagung',
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
+
+          </Card>
+
+          <Card title="Terong">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/terong.png')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Terong',
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
+
+          </Card>
+
+          <Card title="Bayam">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/bayam.jpg')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Bayam',
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
+
+          </Card>
+
+          <Card title="Kangkung">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/kangkung.jpg')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Kangkung',
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
+
+          </Card>
+
+          <Card title="Kubis">
+              <Image
+                  style={styles.image}
+                  resizeMode="contain"
+                  justifyContent='center'
+                  source={require('./assets/kubis.png')}
+              />
+              <Button onPress={() => {Alert.alert(
+                  'Kubis',
+                  'pH Optimal : 5 - 6                                                                 RH Optimal : 70 - 90%',
+              );}} title="Detail" borderRadius={10} backgroundColor='#8ccd56' icon={{name: 'details'}} fontWeight={'bold'} />
 
           </Card>
 
@@ -231,7 +344,7 @@ class marketScreen extends React.Component {
   render() {
     return (
       <ScrollView style={{container: 'black'}}>
-      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('300%') }} source={require('./assets/splash.png')}/>
+      <Image style={{ position: 'absolute', flex: 1, resizeMode: 'cover', width: wp('100%'), height: hp('800%') }} source={require('./assets/splash.png')}/>
         <Image
               style={{width: wp('100%'),height: hp('25%'), resizeMode: 'contain'}}
               source={require('./assets/post1.png')} />
@@ -298,8 +411,8 @@ export default class App extends React.Component {
 
 
 const styles = StyleSheet.create({
-  container: {
 
+  container: {
     flex: 1,
     backgroundColor: '#599e21',
     alignItems: 'center',
@@ -345,22 +458,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: '#84d9f3',
     borderRadius: 10,
-    paddingVertical: 40,
-    marginHorizontal: 90,
-
-  },
-
-  teksstatus: {
-    width: 250,
-    fontWeight: 'bold',
-    fontSize: 20, 
-    alignItems: 'center',
-    textAlign: 'center',
-    backgroundColor: '#84d9f3',
-    borderRadius: 150,
-    paddingVertical: 45,
-    marginVertical: 40,
-    marginHorizontal: 90,
+    paddingVertical: 50,
+    width: wp('50%'),
+    height: hp('20%'),
 
   },
 
@@ -369,6 +469,8 @@ const styles = StyleSheet.create({
       height: 150,
       alignItems: 'center',
       justifyContent: 'center',
-  }
+      marginHorizontal: 28,
+  },
+
 
 });
