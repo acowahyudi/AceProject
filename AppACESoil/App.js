@@ -13,7 +13,7 @@ import Infoslider from 'react-native-infoslider';
 
 class HomeScreen extends React.Component {
     static navigationOptions = {
-        headerRight: (<TouchableOpacity style={{padding: 5}} onPress={() => {
+        headerRight: (<TouchableOpacity style={{paddingBottom: 5}} onPress={() => {
                 Alert.alert('Welcome To Smart Garden');
             }}>
                 <Image
@@ -25,7 +25,6 @@ class HomeScreen extends React.Component {
             backgroundColor: '#297793',
         },
     }
-
     constructor(props) {
         super(props);
 
@@ -34,19 +33,16 @@ class HomeScreen extends React.Component {
                 {
                     title:"Hello Farmer",
                     text:"Selamat datang di aplikasi Smart Garden, Aplikasi untuk membantu anda mengetahui kondisi tanah pertanian",
-                    image: require('./assets/splash12.jpg')},
+                    image: require('./assets/petani.png')},
                 {
                     title:"Apa itu Smart Garden ?",
                     text:"Smart Garden adalah aplikasi android yang menampilkan data tentang pH dan RH tanah yang terintegrasi langsung dengan alat dari smart garden",
-                    image: require('./assets/bayam.jpg')},
-                {
-                    title:"Cara kerjanya ?",
-                    text:"Alat akan mendeteksi pH dan RH tanah kemudian menampilkannya di aplikasi, tidak hanya kita juga bisa mengakses melalui Telegram, WhatsApp, dan SMS",
-                    image: require('./assets/tomat.png')},
+                    image: require('./assets/apaitu.png')},
                 {
                     title:"Kenapa harus Smart Garden ?",
                     text:"Karena Smart Garden menawarkan kemudahan, kecepatan, keakuratan, dan kepraktisan dalam mengetahui kondisi tanah pertanian",
-                    image: require('./assets/jagung.png')},
+                    image:require('./assets/kenapa.png')
+                },
 
             ]
         };
@@ -57,53 +53,53 @@ class HomeScreen extends React.Component {
 
     return (
 
-            <View style={styles.container}>
 
-                <View style={styles.infoslider}>
-                <Infoslider
-                    data={this.state.data}
-                    showDots={true}
-                    activeDotColor="#666"
-                    titleColor="#000"
-                    textColor="#666"
-                    loop={true}
-                    autoplay={true}
-                    autoplayTimeout={9}/>
+                <View style={styles.container}>
+                    <View>
+                        <Infoslider
+                            data={this.state.data}
+                            showDots={false}
+                            activeDotColor="#666"
+                            titleColor="#000"
+                            textColor="#666"
+                            loop={true}
+                            autoplay={true}
+                            autoplayTimeout={9}/>
+                    </View>
+                    <ActionButton buttonColor="#114656">
+
+                        <ActionButton buttonColor='#66b624' title="New Task"
+                                      onPress={() => this.props.navigation.navigate('pH')}>
+                            <Image
+                                style={{width: 60, height: 90}}
+                                source={require('./assets/ph-meter2.png')}/>
+                        </ActionButton>
+
+                        <ActionButton buttonColor='#66b624' title="New Task"
+                                      onPress={() => this.props.navigation.navigate('RH')}>
+                            <Image
+                                style={{width: 60, height: 90}}
+                                source={require('./assets/rh-meter2.png')}/>
+                        </ActionButton>
+
+                        <ActionButton buttonColor='#66b624' title="New Task"
+                                      onPress={() => this.props.navigation.navigate("DT")}>
+                            <Image
+                                style={{width: 60, height: 90}}
+                                source={require('./assets/file.png')}/>
+                        </ActionButton>
+
+                        <ActionButton buttonColor='#66b624' title="New"
+                                      onPress={() => this.props.navigation.navigate("mp")}>
+
+                            <Image
+                                style={{width: 60, height: 90}}
+                                source={require('./assets/market.png')}/>
+                        </ActionButton>
+
+                    </ActionButton>
                 </View>
 
-                <ActionButton buttonColor="#114656">
-
-                    <ActionButton buttonColor='#d77500' title="New Task"
-                                  onPress={() => this.props.navigation.navigate('pH')}>
-                        <Image
-                            style={{width: 60, height: 90}}
-                            source={require('./assets/ph-meter2.png')}/>
-                    </ActionButton>
-
-                    <ActionButton buttonColor='#d77500' title="New Task"
-                                  onPress={() => this.props.navigation.navigate('RH')}>
-                        <Image
-                            style={{width: 60, height: 90}}
-                            source={require('./assets/rh-meter2.png')}/>
-                    </ActionButton>
-
-                    <ActionButton buttonColor='#d77500' title="New Task"
-                                  onPress={() => this.props.navigation.navigate("DT")}>
-                        <Image
-                            style={{width: 60, height: 90}}
-                            source={require('./assets/file.png')}/>
-                    </ActionButton>
-
-                    <ActionButton buttonColor='#d77500' title="New"
-                                  onPress={() => this.props.navigation.navigate("mp")}>
-
-                        <Image
-                            style={{width: 60, height: 90}}
-                            source={require('./assets/market.png')}/>
-                    </ActionButton>
-
-                </ActionButton>
-            </View>
 
         );
     }
@@ -385,6 +381,7 @@ class PengaturanScreen extends React.Component {
     );
   }
 }
+
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
